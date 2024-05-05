@@ -9,8 +9,12 @@ data.dropna()
 
 # remove unneccesary variables from the dataset
 data = data.drop(['AccountWeeks', 'DataPlan', 'ContractRenewal', 'CustServCalls', 'OverageFee', 'RoamMins'], axis = 1)
-print((data))
-print(data.describe())
+
+# exclude monthly charge amounts that are greater than $98 (potential outliers)
+threshold = 98 
+data_without_outliers = data[data['MonthlyCharge'] <= threshold]
+#print((data_without_outliers))
+#print(data_without_outliers.describe())
 
 
 
