@@ -20,7 +20,19 @@ plt.ylabel('Average Daytime Minutes (Per Month)')
 plt.title('Boxplot of Average Daytime Minutes by Churn Status')
 plt.savefig('Figures/Daytime_Minutes_Churn_Status_boxplot.png')
 
+# histogram of Churned Customers and Monthly Bill Averages
+plt.figure(figsize=(7,5)) 
+data_with_churn = data_without_outliers[data_without_outliers['Churn'] == 1]
+sns.histplot(data = data_with_churn, x = 'MonthlyCharge')
+plt.xlabel('Monthly Charge Amounts ($)')
+plt.title('Histogram of Monthly Charge Amounts for Churned Customers')
+plt.savefig('Figures/Monthly_Charge_Churn_histogram.png')
 
-
-
+# hitogram of Non-Churned Customers and Monthly Bill Averages 
+plt.figure(figsize=(7,5)) 
+data_without_churn = data_without_outliers[data_without_outliers['Churn'] == 0]
+sns.histplot(data = data_without_churn, x = 'MonthlyCharge')
+plt.xlabel('Monthly Charge Amounts ($)')
+plt.title('Histogram of Monthly Charge Amounts for Non-Churned Customers')
+plt.savefig('Figures/Monthly_Charge_NonChurn_histogram.png')
 
