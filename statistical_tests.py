@@ -1,9 +1,6 @@
 import sys 
 import pandas as pd 
 import scipy.stats as stats
-import matplotlib.pyplot as plt 
-import seaborn as sns
-import numpy as np 
 from cleaning import * 
 from data_visualizations import *
 
